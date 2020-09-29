@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3CSchool导航条</title>
+    <link rel="stylesheet" href="../CSS/去除默认样式/reset.css">
+    <style>
+        /* 设置宽度高度，导航条居中显示 */
+        .bar{
+            width: 1210px;
+            height: 48px;
+            margin: 100px auto;
+        }
+        /* 设置float，并排排列 */
+        .bar div{
+            float: left;
+        }
+
+        /* 设置每一块的背景颜色和字体颜色 */
+        .bar div {
+            width: 166px;
+            height: 48px;
+            line-height: 48px;
+            /* 文字水平居中显示 */
+            text-align: center;
+            background-color: #E8E7E3;
+            color: #808080;
+        }
+        /* 设置悬浮背景颜色 */
+        .bar div:hover {
+            background-color: #3F3F3F;
+            color: #E8E7E3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <a href="https://www.baidu.com">
+            <div class="html">
+                HTML/CSS
+            </div>
+        </a>
+        <a href="#">
+            <div class="browser">
+                <span>Browser Side</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="server">
+                <span>Server Side</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="programming">
+                <span>Programming</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="xml">
+                <span>XML</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="web">
+                <span>Web Building</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="reference">
+                <span>Reference</span>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>

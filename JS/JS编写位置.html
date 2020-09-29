@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        // alert("这是一个警告");
+        document.write("向body中输出内容")
+        console.log("向控制台输出")
+    </script> -->
+    <script src="./script.js">
+        alert("引用了外部的script就不能在使用该script标签")
+    </script>
+    <script>
+        alert("重新再创建script标签重新写")
+
+
+    </script>
+
+
+</head>
+<body>
+    <br>
+    <br>
+    <button onclick="alert('被发现了')">点击</button>
+    <br>
+    <br>
+    <br>
+    <a href="javascript:alert('又一个警告');">这是一个超链接</a>
+    <br>
+    <br>
+    <br>
+    <a href="javascript:;">超链接</a>
+
+</body>
+</html>

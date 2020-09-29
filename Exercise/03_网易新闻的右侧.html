@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻右侧</title>
+    <link rel="stylesheet" href="../CSS/去除默认样式/reset.css">
+    <style>
+        /* 调整显示的位置 */
+        .box{
+            background-color: #FFFFFF;
+            width: 300px;
+            height: 324px;
+            overflow: hidden;
+            margin: 35px auto;
+        }
+        /* 设置标题样式 */
+        .title {
+            width: 300px;
+            height: 41px;
+            line-height: 40px;
+            border: 1px;
+            background-color: #FFFFFF;
+            border-top: 1px #DDDDDD solid;
+        }
+        /* 标题字体空间样式 */
+        h2{
+            display: inline-block;
+            border-top: 1px #f34540 solid;
+            margin-top: -1px;
+        }
+        /* 标题字体样式 */
+        h2>a{
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        /* 设置图片文字样式 */
+        .img_title{
+            width: 300px;
+            height: 40px;
+            padding-left: 30px;
+            line-height: 40px;
+            margin-top: -40px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        /* 设置列表样式 */
+        .list{
+            width: 300px;
+            height: 120px;
+            margin-top: 12px;
+        }
+        /* 设置列表字体样式 */
+        .list>li{
+            width: 285px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+        /* 添加项目符号 */
+        .list>li::before{
+            content: "▪ ";
+            font-size: 18px;
+            color: #666;
+        }
+        /* 取消超链接下划线，设置颜色 */
+        .list>li>a{
+            text-decoration: none;
+            color: #666;
+        }
+        /* 设置超链接鼠标移入样式 */
+        .list>li>a:hover{
+            color: #f34540;
+        }
+        .title a:hover{
+            color: #f34540;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <h2>
+                <a href="javascript:;">体育</a>
+            </h2>
+        </div>
+        <div class="img">
+            <a href="javascrit:;">
+                <img src="03.jpeg" alt="">
+                <div class="img_title">费德勒首负迪米 扶额摇头不满发挥</div>
+            </a>
+        </div>
+        <ul class="list">
+            <li>
+                <a href="#">乔治:我爱LA 喜欢和LBJ一起打球</a>
+            </li>
+            <li>
+                <a href="#">格林:3年前降薪就在等KD 特制T恤嘲讽LBJ</a>
+            </li>
+            <li>
+                <a href="#">塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</a>
+            </li>
+            <li>
+                <a href="#">CBA下季新赛制:常规赛4组循环 增值46轮</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
