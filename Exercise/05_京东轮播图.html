@@ -3,19 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>京东轮播图</title>
+    <link rel="stylesheet" href="../CSS/去除默认样式/reset.css">
+    <style>
+        /* 设置居中显示图片 */
+        ul{
+            width: 590px;
+            height: 470px;
+            margin: 100px auto;
+            left: 0;
+            right: 0;
+            position: relative;
+        }
+        /* 通过使用绝对定位使所有图片重叠 */
+        li{
+            position: absolute;
+            
+        }
+        /* 设置小圆点 */
+        .pointer{
+            position: absolute;
+            float: left;
+            bottom: 20px;
+            left: 30px;
+            /* background-color: red; */
+        }
+        .pointer::after{
+            content: "";
+            display: block;
+            height: 12px;
+        }
+        /* 第一个圆点 */
+        .active{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color:  rgba(255, 255, 255, 1);
+        }
+        .active::after{
+            content: "";
+            display: block;
+            border-radius: 7px;
+            width: 14px;
+            height: 14px;
+            margin-left: -2px;
+            margin-top: -2px;
+            background-color:rgba(255, 255, 255, 0.5)
+        }
+        /* 后续的圆点 */
+        div a:not(:first-child){
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin-left: 5px;
+        }
+        /* 设置鼠标移入样式 */
+        div a:hover:not(:first-child){
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            margin-left: 5px;
+            background-color:rgba(255, 255, 255, 1);
+        }
+        div a:hover::after{
+            content: "";
+            display: block;
+            border-radius: 7px;
+            width: 14px;
+            height: 14px;
+            margin-left: -2px;
+            margin-top: -2px;
+            background-color:rgba(255, 255, 255, 0.5);
+        }
+    </style>    
     
 </head>
 <body>
-    <div class="img">
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-    </div>
+    <ul>
+        <li>
+            <a href="#" class="one">
+                <img src="05_图片素材/1.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="two">
+                <img src="05_图片素材/2.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="three">
+                <img src="05_图片素材/3.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="four">
+                <img src="05_图片素材/4.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="five">
+                <img src="05_图片素材/5.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="six">
+                <img src="05_图片素材/6.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="seven">
+                <img src="05_图片素材/7.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="eight">
+                <img src="05_图片素材/8.jpg" alt="">
+            </a>
+        </li>
+        <div class="pointer">
+            <a href="javascript:;" class="active"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+    
 </body>
 </html>
