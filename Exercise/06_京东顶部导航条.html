@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东顶部导航条</title>
+    <link rel="stylesheet" href="../CSS/去除默认样式/reset.css">
+    <link rel="stylesheet" href="06_图标素材/iconfont.css">
+    <link rel="stylesheet" href="图标字体/css/all.css">
+    <style>
+        body{
+            font-size: 12px;
+        }
+        /* 设置顶栏背景颜色 */
+        .top-bar-wrapper{
+            height: 29px;
+            background-color: #E3E4E5;
+            border-bottom: 1px #DDDDDD;
+        }
+        /* 设置中间内容区大小 */
+        .top-bar{
+            height: 30px;
+            width: 1190px;
+            line-height: 30px;
+            margin: 0 auto;
+            color: #999;
+        }
+        /* 显示在同一层 */
+        .location{
+            float: left;
+        }
+        .message{
+            float: right;
+        }
+        li{
+            float: left;
+        }
+        /* 去掉超链接的下划线并设置颜色 */
+        .top-bar a{
+            text-decoration: none;
+            color: #999;
+        }
+        /* 设置小图标颜色 */
+        .location>i{
+            color: red;
+        }
+        /* 设置移入样式 和 红色字体 */
+        .top-bar a:hover,
+        .message span,
+        .top-bar .highlight
+        {
+            color: red;
+        }
+        /* 设置竖线分割线 */
+        .message .line{
+            float: left;
+            width: 1px;
+            height: 10px;
+            background-color: #ccc;
+            margin: 10px 10px;
+        }
+        /* 扩展页面 */
+        .ex-page{
+            width: 270px;
+            height: 350px;
+            background-color: whilt;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            display: none;
+            border: solid 1px #DDDDDD;
+            position: absolute;
+
+            top: 28px;
+            /* z-index: 9999; */
+        }
+        /* 光标移入时显示出页面 */
+        .location:hover .ex-page{
+            display: block;
+        }
+        .location:hover{
+            width: 50px;
+            height: 30px;
+            padding-bottom: 10px;
+            background-color: red;
+            position: relative;
+            z-index: 999;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="top-bar-wrapper">
+        <div class="top-bar">
+            <div class="location">
+                <i class="iconfont">&#xe61e;</i>
+                <a class="city" href="javascript:;">重庆</a>
+                <!-- 显示扩展页面 -->
+                <div class="ex-page">
+                    
+                </div>
+            </div>
+            <ul class="message">
+                <li>
+                    <a href="javascript:;">你好，请登录 </a>
+                    <a class="highlight" href="javascript:;">免费注册</a> 
+                    
+                </li>
+                <i class="line"></i>
+                <li>
+                    <a href="javascript:;">我的订单</a>
+                </li>
+                <i class="line"></i>
+                <li>
+                    <a href="javascript:;">我的京东</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <i class="line"></i>
+                <li>
+                    <a href="javascript:;">京东会员</a>
+                </li>
+                <i class="line"></i>
+                <li>
+                    <a href="javascript:;" class="highlight">企业采购</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <i class="line"></i>
+                <li>
+                    客户服务
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <i class="line"></i>
+                <li>
+                    网站导航
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <i class="line"></i>
+                <li>手机京东</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+
+</html>
