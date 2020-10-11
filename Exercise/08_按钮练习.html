@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮练习</title>
+    <style>
+        /* 通过加载一张含有三个状态的图片避免按钮闪烁，前中后分别显示 */
+        a:link{
+            display: block;
+            width: 93px;
+            height: 30px;
+            background-image: url(./08_按钮素材/btn.png);
+        }
+        a:hover{
+            background-position: center;
+            background-image: url(./08_按钮素材/btn.png);
+        }
+        a:active{
+            background-position: right;
+            background-image: url(./08_按钮素材/btn.png);
+        }
+        /* a:link{
+            display: block;
+            width: 93px;
+            height: 30px;
+            background-image: url(./08_按钮素材/link.png);
+        }
+        a:hover{
+            background-image: url(./08_按钮素材/hover.png);
+        }
+        a:active{
+            background-image: url(./08_按钮素材/active.png);
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="javascript:;"></a>
+    </div>
+</body>
+</html>
