@@ -1,0 +1,173 @@
+/* 顶部导航条样式 */
+/* 设置顶部导航条高度、背景样式 */
+.top-bar-wrapper{
+    height: 40px;
+    background-color: #333;
+    font-size: 12px;
+    min-width: 1226px;
+}
+/* 去掉下划线、设置字体颜色、居中显示 */
+.top-bar-wrapper a,
+.top-message i{
+    text-decoration: none;
+    color: #b0b0b0;
+    line-height: 40px;
+}
+/* 设置菜单栏为块元素 */
+.content a{
+    display: block;
+}
+/* 设置浮动 */
+.service li,
+.service .line{
+    float: left;
+}
+.top-message{
+    float: right;
+}
+.top-message li,
+.top-message .line,
+.top-message a{
+    float: left;
+}
+/* 设置分割线样式 */
+.content .line{
+    border: 1px solid #424242;
+    height: 13px;
+    margin: 13px 8px;
+}
+/* 设置字体悬浮颜色 */
+.content .service a:hover,
+.content .change a:hover
+{
+    color: #fff;
+}
+/* 设置购物车区域背景颜色、宽度、文字居中 */
+.top-message .shopping-cart{
+    margin-left: 25px;
+    width: 120px;
+    height: 40px;
+    /* 文字居中显示 */
+    text-align: center;
+    background-color: #424242;
+}
+/* 设置购物车区域鼠标悬浮背景颜色 */
+.shopping-cart:hover{
+    background-color: #fff;
+    padding-bottom: 1px;
+}
+/* 设置购物车区域鼠标悬浮字体颜色 */
+.shopping-cart:hover span,
+.shopping-cart:hover i{
+    color: #E9612B;
+}
+/* 设置‘下载APP’的下拉样式 */
+.service .list{
+    /* display: none; */
+    width: 124px;
+    height: 150px;
+    /* 继承了父元素的行高，此时不需要40px的行高，需重新设置 */
+    line-height: 1px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: -40px;
+}
+/* 设置图片样式 */
+.service .list img{
+    margin: 18px 17px 18px 17px;
+    width: 90px;
+    height: 90px;
+}
+/* 设置‘小米商城APP’样式 */
+.service .list p{
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+/* 开启定位 */
+.service .drop-down-list{
+    position: relative;
+}
+/* 设置箭头大小 */
+.service .app::after{
+    content: '';
+    display: none;
+    border: 8px solid;
+    width: 0;
+    height: 0;
+    border-color: transparent  transparent #fff transparent;
+    border-top: transparent;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+/* 设置隐层 */
+.service .list{
+    height: 0;
+    overflow: hidden;
+    /* 设置高度变化时间 */
+    transition: height .3s;
+}
+/* 鼠标移入后显示 */
+.service .drop-down-list:hover .list{
+    height: 150px;
+}
+.service .app:hover:after{
+    display: block;
+}
+/* 设置定位 */
+.top-message .shopping-cart{
+    position: relative;
+}
+.top-message .topbar-cart{
+    position: relative;
+}
+/* 设置购物车弹出页面 */
+.top-message .cart-content{
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    /* background-color: red; */
+    position: absolute;
+    right: 0;
+    top: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: height 0.3s;
+}
+/* 设置弹出页面的字体 */
+.top-message .cart-content{
+    text-align: center;
+    line-height: 100px;
+}
+/* 购物车鼠标移入盖住下边阴影 */
+.shopping-cart:hover{
+    z-index: 9999;
+}
+/* 购物车扩展页面设置移入样式 */
+.topbar-cart:hover .cart-content{
+    height: 100px;
+    color: #000;
+    display: block;
+    z-index: 999;
+}
+
+/* 设置头部导航条 */
+.header{
+    height: 100px;
+}
+.header .header-content{
+    width: 1226px;
+    height: 100px;
+    background-color: #bbffaa;
+    margin: 0 auto;
+}
+/* 设置头部导航条图标 */
+.header-content .mi-logo{
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+    background-color: #ff6700;
+}
