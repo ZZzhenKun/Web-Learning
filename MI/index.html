@@ -116,13 +116,75 @@
 
     <!-- 头部导航条 -->
     <div class="header">
+        <!-- 内容区 -->
         <div class="header-content clearfix">
-            <!-- 图标 -->
-            <a href="/">
-                <div class="mi-logo">
+            <!-- logo图标 -->
+            <div class="logo">
+                <a class="mi-logo" href="/"></a>
+                <a class="mi-home" href="/"></a>
+            </div>
 
-                </div>
-            </a>
+            <!-- 内容区 -->
+            <div class="header-list">
+                <ul>
+                    <li>
+                        <div class="blank">
+                            <a href="javascript:;">全部商品分类</a>
+                        </div>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">小米手机</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">Redmi红米</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">电视</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">笔记本</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">家电</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">路由器</a>
+                    </li>
+                    <li class="show-page">
+                        <a href="javascript:;">智能硬件</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">服务</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">社区</a>
+                    </li> <!-- 隐藏的下拉界面 -->
+                    <div class="header-pull-down-page">
+                    </div>
+                </ul>
+
+
+            </div>
+
+            <!-- 搜索栏 -->
+            <div>
+                <form class="search" action="../Exercise/target.html">
+                    <!-- 输入框 -->
+                    <input class="search-bar" type="text">
+                    <!-- 输入框默认值 -->
+                    <ul>
+                        <li>小米10Ultra</li>
+                        <li>小米MX4</li>
+                    </ul>
+                    <div class="search-botton-all">
+                        <!-- 暂时使用submit代替，使用JS时使用button定义 -->
+                        <input class="search-botton" type="submit" value="">
+                        <!-- <input class="search-button" type="button" value=""> -->
+                        <!-- 搜索按钮图标 -->
+                        <i class="fas fa-search"></i>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>

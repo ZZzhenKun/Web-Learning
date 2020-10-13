@@ -72,6 +72,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     position: absolute;
     left: -40px;
+    z-index: 999;
 }
 /* 设置图片样式 */
 .service .list img{
@@ -127,7 +128,7 @@
 }
 /* 设置购物车弹出页面 */
 .top-message .cart-content{
-    width: 300px;
+    width: 315px;
     height: 0;
     overflow: hidden;
     /* background-color: red; */
@@ -135,6 +136,7 @@
     right: 0;
     top: 40px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
     transition: height 0.3s;
 }
 /* 设置弹出页面的字体 */
@@ -153,21 +155,210 @@
     display: block;
     z-index: 999;
 }
-
+/* ------------------------------头部导航条----------------------------------- */
+/* ---------------------------LOGO----------------------------- */
 /* 设置头部导航条 */
 .header{
     height: 100px;
+    /* background-color: red; */
+    position: relative;
 }
 .header .header-content{
     width: 1226px;
     height: 100px;
-    background-color: #bbffaa;
+    /* background-color: #bbff00; */
     margin: 0 auto;
+    position: relative;
 }
-/* 设置头部导航条图标 */
-.header-content .mi-logo{
+/* 设置logo */
+.header-content .logo{
     margin-top: 22px;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+}
+/* 设置头部导航条图标 mi-logo */
+.header-content .mi-logo{
+    display: block;
+    position: absolute;
     width: 55px;
     height: 55px;
     background-color: #ff6700;
+    background-image: url(../IMG/mi-logo.png);
+    background-position: center;
+    transition: margin-left 0.3s;
 }
+/* 设置头部导航条图标 home */
+.header-content .mi-home{
+    display: block;
+    position: absolute;
+    margin-left: -55px;
+    width: 55px;
+    height: 55px;
+    background-color: #ff6700;
+    background-image: url(../IMG/mi-home.png);
+    background-position: center;
+    transition: margin-left 0.3s;
+}
+/* 设置导航条图标的动画效果 */
+.logo:hover .mi-home{
+    margin-left: 0px;
+}
+.logo:hover .mi-logo{
+    margin-left: 55px;
+}
+/* -------------------------------中间内容列表--------------------------------- */
+/* 设置中间列表 */
+.header .header-list ul{
+    width: 850px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: -77px;
+    font-size: 16px;
+    /* background-color: #bbffaa; */
+}
+/* 设置列表样式 */
+.header .header-list li{
+    float: left;   
+    line-height: 100px;
+}
+/* 去除下划线、设置字体间距、颜色、设置块元素 */
+.header .header-list a{
+    display: block;
+    text-decoration: none;    
+    color: #000;
+    margin: 0 10px;
+}
+/* 设置‘全部商品分类’的块的大小、设置浮动 */
+.header .header-list .blank{
+    width: 190px;
+    height: 100px;
+    position: relative;
+}
+/* 设置定位，并且隐藏‘全部商品分类’ */
+.header .header-list .blank a{
+    position: absolute;
+    right: 0;
+    margin-right: 0px;
+    display: none;
+}
+/* 设置hover */
+.header li:not(:first-child) a:hover{
+    color:#ff6700;
+}
+/* 设置下拉页面 */
+.header .header-pull-down-page{
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    position: absolute;
+    /* background-color: red; */
+    top: 100px;
+    left: 0;
+    transition: height 0.3s;
+    z-index: 9999;
+}
+/* 设置鼠标悬浮页面下拉 */
+.header-list .show-page:hover ~ .header-pull-down-page,
+.header-pull-down-page:hover{
+    height: 255px;
+    width: 100%;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    /* background-color: yellow; */
+   border-top: 1px solid #E0E0E0;
+}
+/* ----------------------------搜索区域------------------------------------ */
+/* 设置搜索区域的位置 */
+.search{
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+/* 设置搜索框:字体大小、边框*/
+.search-bar{
+    width: 288px;
+    height: 46px;
+    /* margin-top: 15px; */
+    /* background-color: #bfa; */
+    border: 1px solid #b0b0b0;
+    /* 去掉点击时显示边框 */
+    outline: none;
+    padding-left: 10px;
+    font-size: 16px;
+    background-color: #fff;
+}
+/* 设置搜索按钮框大小、边框 */
+.search .search-botton{
+    width: 52px;
+    height: 48px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+    border-left: 1px solid #b0b0b0;
+    /* 去掉点击时显示边框 */
+    outline: none;
+    background-color: #fff;  
+    /* background-color: rebeccapurple; */
+}
+/* 设置搜索按钮样式 */
+.search .fas{
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 16px;
+    /* z-index: 999; */
+    text-align: inherit;
+    color: #616161;
+  
+}
+/* 设置搜索栏的默认内容 */
+.search ul li{
+    display: block;
+    background-color: #E0E0E0;
+    margin: 0 5px;
+    float: left;
+    padding: 0 5px;
+    color: #959595;
+    font-size: 12px;
+}
+/* 设置搜索框默认内容居中显示 */
+.search ul{
+    position: absolute;
+    top: 16px;
+    right: 60px;
+}
+/* 设置鼠标移入搜索框样式、遮盖默认内容 */
+.search-bar:focus{
+    border: 1px solid #ff6700;
+}
+.search-bar:focus ~ .search-botton{
+    border-left: 1px solid #ff6700;
+}
+.search-bar:focus ~ ul li{
+    display: none;
+}
+/* 设置搜索按钮鼠标移入的背景色、去掉周围边框 */
+.search-botton-all{
+    position: absolute;
+    width: 52px;
+    height: 50px;
+    right: 1px;
+    top: 1px;
+}
+/* 设置搜索按钮框鼠标移入样式 */
+.search .search-botton-all:hover .search-botton{
+    background-color: #ff6700;
+    width: 54px;
+    height: 50px;
+    top: -1px;
+    right: -1px;
+    border-left: none;
+}
+/* 按钮变白 */
+.search .search-botton-all:hover .fas{
+    color: #fff;
+}
+/* ------------------按钮点击还有问题------------- */
