@@ -168,7 +168,7 @@
     height: 100px;
     /* background-color: #bbff00; */
     margin: 0 auto;
-    position: relative;
+    /* position: relative; */
 }
 /* 设置logo */
 .header-content .logo{
@@ -219,7 +219,7 @@
     /* background-color: #bbffaa; */
 }
 /* 设置列表样式 */
-.header .header-list li{
+.header .header-list ul li{
     float: left;   
     line-height: 100px;
 }
@@ -253,7 +253,7 @@
     height: 0px;
     overflow: hidden;
     position: absolute;
-    /* background-color: red; */
+    background-color: #fff;
     top: 100px;
     left: 0;
     transition: height 0.3s;
@@ -270,11 +270,16 @@
 }
 /* ----------------------------搜索区域------------------------------------ */
 /* 设置搜索区域的位置 */
+.search-wrapper{
+    position: relative;
+    top: -80px;
+    /* background-color: red; */
+}
 .search{
     margin-top: 10px;
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 0px;
 }
 /* 设置搜索框:字体大小、边框*/
 .search-bar{
@@ -288,6 +293,7 @@
     padding-left: 10px;
     font-size: 16px;
     background-color: #fff;
+    /* background-color: red; */
 }
 /* 设置搜索按钮框大小、边框 */
 .search .search-botton{
@@ -323,6 +329,7 @@
     padding: 0 5px;
     color: #959595;
     font-size: 12px;
+    z-index: 9;
 }
 /* 设置搜索框默认内容居中显示 */
 .search ul{
@@ -334,10 +341,11 @@
 .search-bar:focus{
     border: 1px solid #ff6700;
 }
-.search-bar:focus ~ .search-botton{
+.search-bar:focus ~ .search-botton-all .search-botton{
     border-left: 1px solid #ff6700;
 }
-.search-bar:focus ~ ul li{
+.search-bar:focus ~ ul li,
+.search-botton-all:hover ~ ul li{
     display: none;
 }
 /* 设置搜索按钮鼠标移入的背景色、去掉周围边框 */
@@ -361,4 +369,129 @@
 .search .search-botton-all:hover .fas{
     color: #fff;
 }
-/* ------------------按钮点击还有问题------------- */
+
+/* ----------------------------左侧竖直导航条（与header-list同一块内）--------------------------------- */
+/* 设置导航栏颜色、宽度、高度 */
+.header-list .left-nav{
+    position: relative;
+    width: 234px;
+    height: 460px;
+    left: -55px;
+    top: -1px;
+    /* background-color: red; */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+/* 取消之前设置的浮动效果 */
+.left-nav ul li{ 
+    clear: left;
+    display: block;
+    height: 42px;
+}
+/* 设置字体居中 */
+.left-nav .left-nav-content li a{
+    height: 42px;
+    width: 174px;
+    padding: 0 30px;
+    line-height: 42px;
+    margin: 0px;
+    float: left;
+}
+/* 设置左侧导航栏箭头居中 */
+.left-nav-content i{
+    float: right;
+    line-height: 42px;   
+}
+.header-list .left-nav .left-nav-content{
+    margin: 0 0;
+    width: 0;
+    height: 0;
+    padding-top: 20px;
+}
+/* 设置字体大小、颜色 */
+.header-list .left-nav .left-nav-content a{
+    font-size: 16px;
+    color: #fff;
+}
+/* 设置鼠标悬浮改变背景颜色 */
+.header-list .left-nav .left-nav-content a:hover{
+    background-color: #ff6700;
+    color: #fff;
+    z-index: 99;
+}
+
+/* ----------------------------设置中间图片显示区-------------------------------------- */
+.banner{
+    position: relative;
+    height: 460px;
+    /* background-color: red; */
+}
+/* 设置图片 */
+.banner img{
+    width: 100%;
+}
+.banner .img-list li{
+    position: absolute;
+}
+/* 设置图片切换小圆点 */
+.banner .pointer{
+    position: absolute;
+    right: 35px;
+    bottom: 27px;
+}
+/* 设置浮动 */
+.banner .pointer li{
+    float: left;
+}
+/* 设置小圆点 */
+.banner .pointer a{
+    float: left;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    margin-right: 6px;
+}
+/* 设置小圆点悬浮 */
+.banner .pointer a:hover,
+.banner .pointer .active{
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/* --------------------------设置图片左右箭头--------------------------------- */
+/* 设置箭头居中 */
+.prev-next a{
+    /* position: absolute; */
+    width: 41px;
+    height: 69px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.prev-next .prev{
+    position: absolute;
+    width: 41px;
+    height: 69px;
+    left: 234px;
+    /* background-color: red; */
+    background-image: url(../IMG/icon-slides.png);
+    background-position: -83px;
+    z-index: 999;
+}
+.prev-next .next{
+    position: absolute;
+    right: 0;
+    width: 41px;
+    height: 69px;  
+    /* background-color: red; */
+    background-image: url(../IMG/icon-slides.png);
+    background-position: right;
+    z-index: 999;
+}
+.prev-next .prev:hover{
+    background-position: left;
+}
+.prev-next .next:hover{
+    background-position: -42px;
+}
