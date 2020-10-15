@@ -72,7 +72,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     position: absolute;
     left: -40px;
-    z-index: 999;
+    z-index: 99999;
 }
 /* 设置图片样式 */
 .service .list img{
@@ -494,4 +494,120 @@
 }
 .prev-next .next:hover{
     background-position: -42px;
+}
+
+/* --------------------------设置右侧固定悬浮菜单------------------------------ */
+.fixed-nav{
+    position: fixed;
+    width: 26px;
+    height: 206px;
+    /* background-color: red; */
+    right: 50%;
+    bottom: 220px;
+    margin-right: -639px;
+    border-left: 1px solid #F6F6F6;
+    border-right: 1px solid #F6F6F6;
+}
+.fixed-nav a{
+    display: block;
+    height: 40px;
+    line-height: 42px;
+    text-align: center;
+    width: 25px;
+    border-top: 1px solid #F6F6F6;
+}
+.fixed-nav li:last-child{
+    border-bottom: 1px solid #F6F6F6;
+    /* border-bottom: 1px solrgb(7, 5, 5)red; */
+}
+.fixed-nav i{
+    font-size: 16px;
+    color: #999;
+}
+
+/* -----------------------------底部导航栏-------------------------------- */
+/* 左侧 */
+.buttom-nav{
+    height: 170px;
+    /* background-color: red; */
+    margin-top: 14px;
+}
+.buttom-nav .shot-cut{
+    /* float: left; */
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+}
+.buttom-nav li{
+    float: left;
+}
+.shot-cut a{
+    display: block;
+    float: left;
+    width: 76px;
+    height: 84px;
+    /* overflow: hidden; */
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    color: #CECCCA;
+}
+.shot-cut i{
+    display: block;
+    text-align: center;    
+    margin-top: 20px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+/* 设置鼠标悬浮变色 */
+.shot-cut a:hover{
+    color:#fff;
+}
+/* 设置上分割线 */
+.shot-cut a{
+    position: relative;
+}
+.shot-cut a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 64px;
+    height: 1px;
+    background-color:#645D57;
+    margin: 0 auto;
+    margin-top: 2px;
+}
+/* 设置下分割线 */
+.shot-cut a::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color:#645D57;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-left: 6px;
+}
+/* -----------设置图片-------------- */
+.buttom-img{
+    float: left;
+}
+.buttom-nav .buttom-img img{
+    width: 316px;
+    float: left;
+}
+.buttom-nav{
+    position: relative;
+}
+.buttom-img{
+    position: absolute;
+    left: 248px;
+    top: 0px;
+}
+.buttom-img li:not(:first-child){
+    margin-left: 15px;
 }
