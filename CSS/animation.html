@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./去除默认样式/reset.css">
+    <style>
+        .box1{
+            width: 700px;
+            height: 700px;
+            background-color: silver;
+            overflow: hidden;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+            transition: all 2s;
+            /* margin-left: 700px; */
+            /* transition-timing-function: cubic-bezier(0,1.83,1,-1.53); */
+            transition-timing-function: steps(9999999990);
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+            /* margin-left: 700px; */
+            transition: all 2s;
+        
+        }
+
+        .box1:hover div{
+            margin-left: 600px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

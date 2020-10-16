@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的少年</title>
+    <style>
+        .box1 {
+            background-image: url(./12_图片素材/bg2.png);
+            margin: 50px auto;
+            height: 256px;
+            width: 256px;
+            animation: test .5s infinite 1s steps(5);
+        }
+
+        .box2{
+            background-image: url(./12_图片素材/trump_run.png);
+            margin: 100px auto;
+            height: 400px;
+            width: 100px;
+            animation: box2 .5s infinite steps(6);
+        }
+        /* 创建关键帧 */
+        @keyframes test {
+            from {
+                background-position: 0;
+            }
+
+            to {
+                background-position: -1280px;
+            }
+        }
+        @keyframes box2{
+            from{
+                
+                background-position-x: 0;
+            }
+            to{
+                background-position-x: -600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+    </div>
+
+    <div class="box2"></div>
+</body>
+
+</html>
