@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置表的背景 */
+        .clock{
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background-image: url(./13_图片素材/1024px-Analogue_clock_face.svg.png);
+            background-size: 100%;
+            margin: 100px auto;
+            position: relative;
+        }
+        .clock > div{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+        /* 设置时针 */
+        .hour-wrapper{
+            width: 57%;
+            height: 57%;
+            /* background-color: white; */
+            animation: run 43200s steps(60) infinite;
+        }
+        .hour{
+            height: 50%;
+            width: 10px;
+            background-color: black;
+            margin: 0 auto;
+        }
+        /* 设置分针 */
+        .min-wrapper{
+            width: 70%;  
+            height: 70%;
+            /* background-color: white; */
+            animation: run 3600s steps(60) infinite;
+        }
+        .min{
+            height: 50%;
+            width: 5px;
+            background-color: rgb(59, 58, 58);
+            margin: 0 auto;
+        }
+        /* 设置秒针 */
+        .sec-wrapper{
+            width: 88%;
+            height: 88%;
+            /* background-color: blue; */
+            animation: run 60s steps(60) infinite;
+        }
+        .sec{
+            height: 50%;
+            width: 3px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        /* 设置关键帧 */
+        @keyframes run{
+            from{
+                transform: rotateZ(0);
+            }
+            to{
+                transform: rotateZ(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 表的容器 -->
+    <div class="clock">
+        <!-- 时针 -->
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+        <!-- 分针 -->
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div> 
+        <!-- 秒针 -->
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>

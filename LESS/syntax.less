@@ -1,0 +1,18 @@
+@a:box1;
+@b:200px;
+@c:#bfa;
+
+.@{a}{
+    width: @b;
+    height: @b;
+    background-color: @c;
+}
+
+@d:box3;
+.@{d}{
+    margin-top: @b;
+    width:@b;
+    height: $width;
+    background-color: red;
+
+}
