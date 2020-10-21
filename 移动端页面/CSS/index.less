@@ -1,0 +1,145 @@
+@design-width:750;//设计宽度
+
+//设置根元素
+html{
+    // 1 rem = 1 html的字体大小
+    font-size: 100vw/@design-width * 40;
+    background-color: #eff0f4;
+}
+.w{
+    width: 693/40rem;
+    margin: 0 auto;
+}
+
+// 设置头部导航栏
+.header-nav:extend(.w){
+    // 设置弹性盒
+    display: flex;
+    height: 175/40rem;
+    // background-color: #bfa;
+    justify-content: space-between;
+    line-height: $height;
+    // 设置左侧图标
+    .nav-icon{
+        color: #999999;
+    }
+    // 设置中间文字
+    h1{
+        font-size: 50/40rem;
+        color: #24253d;
+    }
+    // 设置右侧搜索图标
+    .nav-search{
+        color: #656565;
+    }
+
+}
+
+// 设置中间图片
+.img:extend(.w){
+    height: 277/40rem;
+    // background-color: red;
+    img{
+        width: 100%;
+    }
+}
+
+// 设置中间导航栏
+    //设置显示框宽和高
+.middle-nav div{
+    width: 327/40rem;
+    height: 104/40rem;
+    border-radius: 8px;
+    
+}
+.middle-nav:extend(.w){
+    // background-color: #bfa;
+    display: flex;
+    // 沿着辅轴方向换行
+    flex-wrap: wrap;
+    // 竖直方向平均分布
+    align-content: space-evenly;
+    // 水平方向平均分布
+    justify-content: space-between;
+    height: 334/40rem;
+    color: #fff;
+    font-size: 14px;
+    line-height: 104/40rem;
+    .courses{
+        background-color: #f57763;
+    }
+    .teacher{
+        background-color: #d078fe;
+    }
+    .sub{
+        background-color: #E92F79;
+    }
+    .download{
+        background-color: #4D97FC;
+    }
+    // 设置图标周围间距
+    i{
+        padding: 0 25/40rem 0 38/40rem;
+    }
+}
+
+// 设置内容区
+.content:extend(.w){
+    .title{
+        height: 120/40rem;
+        display: flex;
+        justify-content: space-between;
+        // background-color: red;
+        align-items: center;
+        h3{
+            font-size: 33/40rem;
+            border-left: 1px solid #4D97FC;
+            padding-left: 18/40rem;
+        }
+        span{
+            font-size: 33/40rem;
+        }
+    }
+    .show-list{
+        // background-color: #bfa;
+        height: 382/40rem;
+        display: flex;
+        overflow: auto;
+        .annabelle{
+            // background-color: red;
+            // 设置弹性盒不产生形变
+            flex: none;
+            margin-right: 24/40rem;
+            width: 327/40rem;
+            height: 325/40rem;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 0 20/40rem;
+            background-color: #fff;
+            display: flex;
+            // flex-flow: column;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .img-1{
+                width: 100%;
+            }
+            .span-1{
+                font-size: 33/40rem;
+                color: #282828;
+            }
+            
+            .span-2{
+                display: flex;
+                font-size: 25/40rem;
+                color: #9E9C9C;
+                align-items: center;
+                justify-content: space-between;
+                .img-2{
+                    width: 41/40rem;
+                }
+            }
+        }
+
+    }
+
+}
