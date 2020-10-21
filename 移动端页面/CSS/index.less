@@ -84,7 +84,8 @@ html{
 }
 
 // 设置内容区
-.content:extend(.w){
+.content{
+    padding-left: 30/40rem;
     .title{
         height: 120/40rem;
         display: flex;
@@ -109,10 +110,12 @@ html{
             // background-color: red;
             // 设置弹性盒不产生形变
             flex: none;
+            // 防止整个盒子因为设置padding被撑大，设置为边框大小
+            box-sizing: border-box;
             margin-right: 24/40rem;
             width: 327/40rem;
             height: 325/40rem;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             padding: 0 20/40rem;
             background-color: #fff;
