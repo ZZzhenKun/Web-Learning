@@ -1,0 +1,66 @@
+// 设置导航栏样式
+.header{
+    height: 48px;
+    background-color: #000;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    .header-nav{
+        a{
+            display: block;
+            width: 18px;
+            height: 48px;
+            // background-color: red;
+            position: relative;
+            li{
+                width: 18px;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                transition: all 0.2s;
+            }
+            li:nth-child(1){
+                top: 16px;
+            }
+            li:nth-child(2){
+                top: 24px;
+            }
+            li:nth-child(3){
+                top: 32px;
+            }
+        }
+        
+    }
+    // 设置鼠标悬浮样式
+    .header-nav:hover{
+        li:nth-child(2){
+            top: 24px;
+            width: 0;
+        }
+        li:nth-child(1){
+            transform-origin: 0 center;
+            transform: rotateZ(43deg);
+            width: 23px;
+        }
+        li:nth-child(3){
+            transform-origin: 0 center;
+            transform: rotateZ(-43deg);
+            width: 23px;
+        }
+    }
+    .title{
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+    .icon{
+        a{
+            color: #fff;
+            font-size: 18px;
+    }
+        }
+       
+}
