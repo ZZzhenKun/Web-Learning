@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img {
+            width: 200px;
+            margin: 100px auto;
+            background-color: #bfa;
+            padding: 20px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <!-- 显示是第几张照片 -->
+        <p id="info"></p>
+        <img src="./05_图片素材/1.jpg" alt="">
+        <button id="next">上一张</button>
+        <button id="pre">下一张</button>
+    </div>
+    <!-- 设置上一张下一张两个按钮效果 -->
+    <script>
+        // 获取对象
+        // 此时返回的是一个数组，我们应该取其中的元素
+        var img = document.getElementsByTagName("img")[0];
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        var info = document.getElementById("info");
+
+        //创建图片数组
+        var imgArr = ["./05_图片素材/1.jpg", "./05_图片素材/2.jpg", "./05_图片素材/3.jpg", "./05_图片素材/4.jpg", "./05_图片素材/5.jpg", "./05_图片素材/6.jpg"];
+        // 表示第几张照片
+        var index = 0;
+        // 设置当前是第几张照片
+        info.innerHTML = "一共" + imgArr.length + "照片，这是第" + (index + 1) + "照片";
+        // 创建响应函数
+        pre.onclick = function () {
+            index++;
+            if (index > 5) {
+                index = 0;
+                img.src = "./05_图片素材/1.jpg";
+            }
+            img.src = imgArr[index];
+            // 设置当前是第几张照片
+            info.innerHTML = "一共" + imgArr.length + "照片，这是第" + (index + 1) + "照片";
+        }
+        next.onclick = function () {
+            index--;
+            if (index < 0) {
+                index = 5;
+                img.src = "./05_图片素材/6.jpg";
+            }
+            img.src = imgArr[index];
+            // 设置当前是第几张照片
+            info.innerHTML = "一共" + imgArr.length + "照片，这是第" + (index + 1) + "照片";
+        }
+    </script>
+</body>
+
+</html>
