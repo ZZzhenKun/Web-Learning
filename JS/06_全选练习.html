@@ -16,6 +16,8 @@
             var checkedRevBtn = document.getElementById("checkedRevBtn");
             // 提交
             var sendBtn = document.getElementById("sendBtn");
+            // 设置全选/全不选多选框
+            var checkedAllBox = document.getElementById("checkedAllBox");
             //设置所有运动类的对象
             var items = document.getElementsByName("items");
 
@@ -25,6 +27,7 @@
                     // 设置选中
                     items[i].checked = true;
                 }
+                checkedAllBox.checked = items[0].checked;
             }
 
             // 设置全不选按钮响应函数
@@ -33,28 +36,71 @@
                     // 设置全不选
                     items[i].checked = false;
                 }
+                checkedAllBox.checked = items[0].checked;
             }
 
             // 设置反选
             checkedRevBtn.onclick = function () {
                 for (var i = 0; i < items.length; i++) {
+                    // if (items[i].checked == false) {
+                    //     items[i].checked = true;
+                    // }
+                    // else {
+                    //     items[i].checked = false;
+                    // }
+                    items[i].checked = !items[i].checked;
+                }
+                // 判断是否是全选
+                for (var i = 0; i < items.length; i++) {
                     if (items[i].checked == false) {
-                        items[i].checked = true;
+                        checkedAllBox.checked = items[i].checked;
+                        break;
                     }
-                    else {
-                        items[i].checked = false;
+                    if (i == items.length - 1) {
+                        checkedAllBox.checked = items[0].checked;
+                    } else {
+                        checkedAllBox.checked = false;
                     }
                 }
+
             }
 
             // 设置提交
-            sendBtn.onclick = function(){
-                for(var i=0; i<items.length; i++){
-                    if(items[i].checked == true){
+            sendBtn.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked == true) {
                         alert(items[i].value);
                     }
                 }
             }
+
+            // 设置全选/全不选多选框
+            checkedAllBox.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    // if(checkedAllBox.checked == true){
+                    //     items[i].checked = true;
+                    // }else{
+                    //     items[i].checked = false;
+                    // }
+                    items[i].checked = this.checked;
+                }
+            }
+
+            // 点击每个items时判断是否为全选
+            for (var j = 0; j < items.length; j++) {
+                items[j].onclick = function () {
+                    for (var i = 0; i < items.length; i++) {
+                        if (items[i].checked == true) {
+                            if (i == items.length - 1)
+                                checkedAllBox.checked = true;
+                        } else {
+                            checkedAllBox.checked = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
         };
 
 
