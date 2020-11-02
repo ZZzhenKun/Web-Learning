@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟随鼠标移动</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 创建box1的对象
+            var box1 = document.getElementById("box1");
+            var body = document.getElementById("body");
+            var marginL = 0;
+            var marginT = 0;
+            // 鼠标移动事件
+            window.onmousemove = function (event) {
+                if (!event)
+                    event = window.event
+                // alert(typeof getComputedStyle(box1,null)["width"])
+                // 不支持IE8及以下
+                // marginL = event.pageX;
+                // marginT = event.pageY;
+                marginL = event.clientX;
+                marginT = event.clientY;
+                var H = document.documentElement.scrollTop;
+                var L = document.documentElement.scrollLeft;
+                // alert(l)
+                // console.log(l);
+                box1.style.marginLeft = marginL + L + "px";
+                box1.style.marginTop = marginT + H + "px";
+            }
+
+        }
+    </script>
+</head>
+
+<body style="height: 10000px; width: 2000px;">
+    <div id="box1"></div>
+</body>
+
+</html>
