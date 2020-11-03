@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标拖拽移动</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 绑定box1的单击相应函数
+            var box1 = document.getElementsByClassName("box1")[0];
+            // 鼠标按下
+            box1.onmousedown = function (event) {
+                var l = event.clientX;
+                var t = event.clientY;
+                var indexl;
+                var indext;
+                indexl = l - box1.offsetLeft;
+                indext = t - box1.offsetTop;
+                // 鼠标移动
+                window.onmousemove = function (event) {
+                    l = event.clientX;
+                    t = event.clientY;    
+                    // alert(indexl)
+                    box1.style.left = (l - indexl) + "px"  ;
+                    box1.style.top = (t - indext) + "px";
+                    // alert(box1.style.left)
+                }
+                // 鼠标抬起
+                window.onmouseup = function () {
+                    window.onmousemove = null;
+                    window.onmouseup = null;
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box1">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个元素同时绑定多个事件</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            function bind(obj, eventStr, callback) {
+                if (!obj.addEventListener) {
+                    // obj.attachEvent("on" + eventStr, callback);
+                    obj.attachEvent("on" + eventStr, function(){
+                        //使用匿名函数调用回调函数，可以自己确定哪个对象来调用callback函数
+                        callback.call(obj);
+                    });
+                } else {
+                    obj.addEventListener(eventStr, callback); 
+                }
+            }   
+            bind(btn,"click",function(){
+                alert("这是一个警告1")
+            })
+            bind(btn,"click",function(){
+                alert("这是一个警告2")
+            })
+
+        }
+    </script>
+</head>
+
+<body>
+    <button>这是一个按钮</button>
+</body>
+
+</html>
