@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片自动切换</title>
+    <script>
+        window.onload = function () {
+            var num = 0;
+            // 定义图片数组
+            var imgs = ["./05_图片素材/1.jpg", "./05_图片素材/2.jpg", "./05_图片素材/3.jpg", "./05_图片素材/4.jpg", "./05_图片素材/5.jpg", "./05_图片素材/6.jpg"]
+            var img = document.getElementsByTagName("img")[0];
+            // 获取按钮对象
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            // // 定义定时器参数数组
+            // var timer = [];
+            // var index = -1;
+            var timer;
+            btn01.onclick = function () {
+                // 开启新的定时器时关闭上一个定时器
+                clearInterval(timer)
+                // 设置定时器
+                timer = setInterval(function () {
+                    img.src = imgs[num++];
+                    if (num == imgs.length) {
+                        num = 0;
+                    }
+                }, 1000);
+            }
+            btn02.onclick = function(){
+                // 停止计时器
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="./05_图片素材/1.jpg" alt="">
+    <br>
+    <br>
+    <button id="btn01">开始播放</button>
+    <button id="btn02">停止播放</button>
+</body>
+
+</html>
