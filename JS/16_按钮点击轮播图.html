@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮点击轮播图</title>
+    <link rel="stylesheet" href="../CSS/去除默认样式/reset.css">
+    <style>
+        /* 设置外容器样式 */
+        .outer {
+            width: 520px;
+            height: 332px;
+            background-color: #bbffaa;
+            padding: 10px 0;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ul开启绝对定位 */
+        ul {
+            /* 宽度不能写死，使用js设置
+            width: 2550px;  */
+            position: absolute;
+        }
+
+        /* 设置li浮动、图片右边距 */
+        .outer li {
+            float: left;
+            margin: 0 10px;
+
+        }
+
+        /* 设置导航条图标 */
+        .nav-bar {
+            position: absolute;
+            bottom: 30px;
+            /* 使用js设置导航栏居中 */
+            /* left: 100px; */
+
+        }
+
+        .nav-bar a {
+            display: block;
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            /* 设置透明 */
+            opacity: 0.5;
+            margin: 7px;
+        }
+
+        /* 设置第一个默认选中 */
+        .nav-bar a:first-child {
+            background-color: black;
+        }
+
+        /* 设置鼠标悬浮 */
+        a:hover {
+            background-color: black;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            // 获取ul
+            var ulWidth = document.getElementsByTagName("ul")[0];
+            // 获取li
+            var imgNum = document.getElementsByTagName("img");
+            // 设置ul宽度
+            ulWidth.style.width = 520 * imgNum.length + "px";
+            // 设置导航栏居中
+            var navbar = document.getElementsByClassName("nav-bar")[0];
+            // 获取outer
+            var outer = document.getElementsByClassName("outer")[0];
+            // 获取a
+            var allA = document.getElementsByTagName("a");
+            // 设置偏移量
+            navbar.style.left = (outer.offsetWidth - navbar.offsetWidth) / 2 + "px";
+            // 设置图片滚动
+            for (var i = 0; i < allA.length; i++) {
+                allA[i].index = i;
+                // 设置接收定时器返回值的变量
+                var timer = 0;
+                // 点击导航栏的时候
+                allA[i].onclick = function () {
+                    move(this, 20);
+                }
+            }
+
+            // 设置移动函数
+            function move(obj, speed) {
+                //  求出当前图片的位置
+                var newValue = parseInt(ulWidth.offsetLeft);
+                // 设置图片边界值
+                var border = - obj.index * 520;
+                // 设置定时动画 
+                // 当前图片的左偏移量大于边界值，应该向左移动
+                if (newValue > border) {
+                    // 向左滚动
+                    speed = -speed;
+                    clearInterval(timer);
+                    timer = setInterval(function () {
+                        // 图片移动速度 
+                        newValue = ulWidth.offsetLeft + speed;
+                        ulWidth.style.left = newValue + "px";
+                        // 向左移动停止
+                        if (newValue <= border)
+                            clearInterval(timer)
+                    }, 20)
+                } 
+                // 当前图片的左偏移量小于边界值，应该向右移动
+                if(newValue < border) {
+                    // 向右滚动
+                    speed = speed;
+                    clearInterval(timer);
+                    timer = setInterval(function () {
+                        // 图片移动速度 
+                        newValue = ulWidth.offsetLeft + speed;
+                        ulWidth.style.left = newValue + "px";
+                        // 向右移动停止
+                        if (newValue >= border)
+                            clearInterval(timer)
+                    }, 20)
+                }
+
+                for (var j = 0; j < allA.length; j++) {
+                    // 先将左右的按钮设置为红色
+                    allA[j].style.backgroundColor = "red";
+                }
+                // 设置点按的按钮为黑色
+                obj.style.backgroundColor = "black";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <ul>
+            <!-- li用于放置图片 -->
+            <li><img src="./16_图片素材/1.jpg" alt=""></li>
+            <li><img src="./16_图片素材/2.jpg" alt=""></li>
+            <li><img src="./16_图片素材/3.jpg" alt=""></li>
+            <li><img src="./16_图片素材/4.jpg" alt=""></li>
+            <li><img src="./16_图片素材/5.jpg" alt=""></li>
+        </ul>
+        <!-- 创建导航条 -->
+        <div class="nav-bar">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+
+</html>
