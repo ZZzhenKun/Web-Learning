@@ -11,7 +11,7 @@
         .outer {
             width: 520px;
             height: 332px;
-            background-color: #bbffaa;
+            background-color: #0f0da3;
             padding: 10px 0;
             margin: 100px auto;
             position: relative;
@@ -78,63 +78,86 @@
             var outer = document.getElementsByClassName("outer")[0];
             // 获取a
             var allA = document.getElementsByTagName("a");
+            // 获取img
+            var allImg = document.getElementsByTagName("img");
             // 设置偏移量
             navbar.style.left = (outer.offsetWidth - navbar.offsetWidth) / 2 + "px";
             // 设置图片滚动
+            for (var i = 0; i < allImg.length; i++) {
+                allImg[i].index = i;
+                // alert(allImg[i].index);
+            }
+            // 设置定时器的标识
+            var timer = 0;
             for (var i = 0; i < allA.length; i++) {
                 allA[i].index = i;
                 // 设置接收定时器返回值的变量
-                var timer = 0;
-                // 点击导航栏的时候
+                // 绑定单击响应函数
                 allA[i].onclick = function () {
-                    move(this, 20);
+                    // 通过index确定点击的是哪一张图片
+                    index = this.index;
+                    // 点击时，调用move函数
+                    clearInterval(timer)
+                    move(this, 20, -520 * this.index, function () {
+                        autoChange(20);
+                    });
+                    setButton();
                 }
             }
+            autoChange(20);
 
-            // 设置移动函数
-            function move(obj, speed) {
+            // 设置图片自动滚动函数
+            var index = 0;// 设置按钮编号
+            function autoChange(speed) {
+                timer = setInterval(function () {
+                    index++;
+                    // index = index % allImg.length;
+                    move(allImg[index], 20, -520 * index, function () {
+                        setButton();
+                        console.log(index)
+                    });
+                }, 1000)
+            }
+
+            // 设置图片移动函数
+            function move(obj, speed, target, callback) {
                 //  求出当前图片的位置
                 var newValue = parseInt(ulWidth.offsetLeft);
-                // 设置图片边界值
-                var border = - obj.index * 520;
-                // 设置定时动画 
-                // 当前图片的左偏移量大于边界值，应该向左移动
-                if (newValue > border) {
+                // 判断移动的方向
+                if (newValue > target) {
                     // 向左滚动
                     speed = -speed;
-                    clearInterval(timer);
-                    timer = setInterval(function () {
-                        // 图片移动速度 
-                        newValue = ulWidth.offsetLeft + speed;
-                        ulWidth.style.left = newValue + "px";
-                        // 向左移动停止
-                        if (newValue <= border)
-                            clearInterval(timer)
-                    }, 20)
-                } 
-                // 当前图片的左偏移量小于边界值，应该向右移动
-                if(newValue < border) {
-                    // 向右滚动
-                    speed = speed;
-                    clearInterval(timer);
-                    timer = setInterval(function () {
-                        // 图片移动速度 
-                        newValue = ulWidth.offsetLeft + speed;
-                        ulWidth.style.left = newValue + "px";
-                        // 向右移动停止
-                        if (newValue >= border)
-                            clearInterval(timer)
-                    }, 20)
                 }
+                // 设置定时动画 
+                clearInterval(obj.timer);
+                // 为每个对象设置定时器标识
+                obj.timer = setInterval(function () {
+                    // 图片移动速度 
+                    newValue = ulWidth.offsetLeft + speed;
+                    ulWidth.style.left = newValue + "px";
+                    // 移动停止的条件
+                    if (speed < 0 && newValue <= target || speed>0 &&newValue >= target) {
+                        clearInterval(obj.timer)
+                        callback && callback();
+                    }
+                }, 10)
+            }
 
+            // 设置点击按钮变色
+            function setButton() {
+                // 判断此时是否是最后一张照片，如果是则将做偏移量致0
+                if (index >= allImg.length - 1) {
+                    index = 0;
+                    ulWidth.style.left = 0 + "px";
+                }
                 for (var j = 0; j < allA.length; j++) {
                     // 先将左右的按钮设置为红色
                     allA[j].style.backgroundColor = "red";
                 }
                 // 设置点按的按钮为黑色
-                obj.style.backgroundColor = "black";
+                allA[index].style.backgroundColor = "black";
+                console.log(index + "allA")
             }
-
         }
     </script>
 </head>
@@ -148,6 +171,7 @@
             <li><img src="./16_图片素材/3.jpg" alt=""></li>
             <li><img src="./16_图片素材/4.jpg" alt=""></li>
             <li><img src="./16_图片素材/5.jpg" alt=""></li>
+            <li><img src="./16_图片素材/1.jpg" alt=""></li>
         </ul>
         <!-- 创建导航条 -->
         <div class="nav-bar">
