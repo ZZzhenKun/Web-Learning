@@ -87,8 +87,7 @@
                 allImg[i].index = i;
                 // alert(allImg[i].index);
             }
-            // 设置定时器的标识
-            var timer = 0;
+
             for (var i = 0; i < allA.length; i++) {
                 allA[i].index = i;
                 // 设置接收定时器返回值的变量
@@ -96,51 +95,65 @@
                 allA[i].onclick = function () {
                     // 通过index确定点击的是哪一张图片
                     index = this.index;
-                    // 点击时，调用move函数
+                    // 关闭自动切换定时器
                     clearInterval(timer)
-                    move(this, 20, -520 * this.index, function () {
-                        autoChange(20);
+                    // 点击时，调用move函数
+                    move(ulWidth, 20, -520 * this.index, function () {
+                        autoChange();
                     });
                     setButton();
                 }
             }
-            autoChange(20);
+            autoChange();
 
             // 设置图片自动滚动函数
             var index = 0;// 设置按钮编号
-            function autoChange(speed) {
+            // 设置定时器的标识
+            var timer;
+            function autoChange() {
                 timer = setInterval(function () {
                     index++;
                     // index = index % allImg.length;
-                    move(allImg[index], 20, -520 * index, function () {
+                    move(ulWidth, 20, -520 * index, function () {
                         setButton();
-                        console.log(index)
+                        // console.log(index)
                     });
-                }, 1000)
+                }, 3000)
             }
 
             // 设置图片移动函数
             function move(obj, speed, target, callback) {
+                // 关闭上一个定时器
+                clearInterval(obj.timer);
                 //  求出当前图片的位置
                 var newValue = parseInt(ulWidth.offsetLeft);
+                // var current = parseInt(obj.offsetLeft);
                 // 判断移动的方向
                 if (newValue > target) {
+                // if (current > target) {
                     // 向左滚动
                     speed = -speed;
                 }
                 // 设置定时动画 
-                clearInterval(obj.timer);
                 // 为每个对象设置定时器标识
                 obj.timer = setInterval(function () {
                     // 图片移动速度 
+                    // var oldValue = parseInt(obj.offsetLeft);
                     newValue = ulWidth.offsetLeft + speed;
-                    ulWidth.style.left = newValue + "px";
+                    // var newValue = oldValue + speed;
                     // 移动停止的条件
-                    if (speed < 0 && newValue <= target || speed>0 &&newValue >= target) {
-                        clearInterval(obj.timer)
+                    if (speed < 0 && newValue <= target || speed > 0 && newValue >= target) {
+                        newValue = target;
+                    }
+                    obj.style.left = newValue + "px";
+                    if(newValue == target){
+                        // 到达目标，关闭定时器
+                        // console.log(obj.timer);
+                        clearInterval(obj.timer);
                         callback && callback();
                     }
-                }, 10)
+                }, 30)
+
             }
 
             // 设置点击按钮变色
@@ -156,7 +169,7 @@
                 }
                 // 设置点按的按钮为黑色
                 allA[index].style.backgroundColor = "black";
-                console.log(index + "allA")
+                // console.log(index + "allA")
             }
         }
     </script>
