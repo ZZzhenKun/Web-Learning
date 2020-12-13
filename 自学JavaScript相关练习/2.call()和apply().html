@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call()和apply()</title>
+    <script src="./assert.js"></script>
+    <script>
+        window.onload = function(){
+
+            function forEach(list,callback){
+                for (let n = 0; n < list.length; n++) {
+                    callback.call(list[n],n);
+                }
+            }
+        
+            var weapons = ['shuriken','katana','nunchucks'];
+        
+            forEach(
+                weapons,
+                function(x){
+                    // 此处的x是从call(list[n],n)中的n传下来的
+                        assert(this == weapons[x],
+                        "Got the expected calue of " + weapons[x]);
+                    }
+            );
+        }
+    </script>
+</head>
+<body>
+    <ul id="results"></ul>
+</body>
+</html>
