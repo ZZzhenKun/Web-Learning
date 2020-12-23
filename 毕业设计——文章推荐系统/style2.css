@@ -1,0 +1,457 @@
+body{
+  background-color: #EEE;
+}
+/* ---------------------------顶部导航栏--------------------------------- */
+/* 设置标题 */
+.nav-top{
+  font-size: 30px;
+  color: #ffffff;
+  /* background-color: red; */
+  text-align: center;
+  height: 200px;
+  background-image: url(./image/36C63E29DE7D6C64A1AB5EAB5209134A.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav-top h1{
+  float: left;
+  margin-left: 300px;
+  font-size: 70px;
+  margin-top: 20px;
+}
+
+.search-button{
+  width: 200px;
+  height: 35px;
+  float: left;
+  border-radius: 30px/50px;
+  margin-top: 30px;
+  margin-left: 470px;
+  background-color: #EEE;
+}
+.search-button button{
+  width: 70px;
+  float: left;
+  font-size: 22px;
+  margin-left: 210px;
+}
+
+.login button{
+  float: right;
+  margin-right: -170px;
+  font-size: 22px;
+  margin-top: 30px;
+}
+.login .head-image{
+  float: right;
+  margin-top: 20px;
+  margin-right: 300px;
+}
+
+
+/* -----------------------右侧关键词和推荐导航栏------------------------------ */
+/* 推荐 */
+.hot-recommendation{
+  width: 80px;
+  height: 30px;
+  float: left;
+  margin-left: 300px;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 40px/50px;
+  background-color: #054768;
+  color: #fff;
+}
+
+/* 热门关键词 */
+.hot-keywords{
+  width: 150px;
+  height: 30px;
+  float: left;
+  margin-left: 60px;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 40px/50px;
+  background-color: #fff;
+  color: #999999;
+}
+
+/* ------------------中间文章主体---------------------- */
+.essay{
+  /* width: 800px; */
+  width: 1500px;
+  background-color: red;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 文章1 */
+.essay-body1{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position:absolute;
+  top: 60px;
+  left: 70px;
+  /* margin-left: 100px; */
+}
+.essay-body1 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body1 .title .key{
+  font-size: 15px;
+}
+
+.essay-body1 .download{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body1 .online-read{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body1 .collect{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/*   文章2 */
+.essay-body2{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 60px;
+  right: 70px;
+}
+.essay-body2 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body2 .title .key{
+  font-size: 15px;
+}
+
+.essay-body2 .download{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body2 .online-read{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body2 .collect{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/* 文章3 */
+.essay-body3{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 280px;
+  left: 70px;
+}
+.essay-body3 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body3 .title .key{
+  font-size: 15px;
+}
+
+.essay-body3 .download{
+  float: left;
+  margin-top: 45px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body3 .online-read{
+  float: left;
+  margin-top: 45px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body3 .collect{
+  float: left;
+  margin-top: 45px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/* 文章4 */
+.essay-body4{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 280px;
+  right: 70px;
+}
+.essay-body4 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body4 .title .key{
+  font-size: 15px;
+}
+
+.essay-body4 .download{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body4 .online-read{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body4 .collect{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/* 文章5 */
+.essay-body5{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 500px;
+  left: 70px;
+}
+.essay-body5 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body5 .title .key{
+  font-size: 15px;
+}
+
+.essay-body5 .download{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body5 .online-read{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body5 .collect{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/* 文章6 */
+.essay-body6{
+  width: 600px;
+  height: 200px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 500px;
+  right: 70px;
+}
+.essay-body6 .title{
+  font-size: 25px;
+  padding: 20px 0 0 20px;
+}
+
+.essay-body6 .title .key{
+  font-size: 15px;
+}
+
+.essay-body6 .download{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.essay-body6 .online-read{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 100px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.essay-body6 .collect{
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 50px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #4C93B7;
+  color: #fff;
+  border-radius: 60px/50px;
+  line-height: 23px;
+  text-align: center;
+}

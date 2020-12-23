@@ -1,0 +1,131 @@
+/* 设置顶部导航栏样式 */
+.nav-top{
+  height: 80px;
+  width: 1000px;
+  margin: 0 auto;
+  /* background-color: #606365; */
+  border: 2px black solid;
+}
+/* 设置标题 */
+.nav-top h1{
+  font-size: 30px;
+  float: left;
+  padding-left: 20px;
+}
+/* 设置搜索框 */
+.nav-serch-box{
+  width: 200px;
+  height: 50px;
+  float: left;
+  margin-left: 350px;
+  margin-top: 15px;
+  border: 2px solid black;
+}
+/* 设置搜索按钮垂直居中 */
+.search-button{
+  float: left;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+/* 设置登录区域 */
+.login{
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+/* ------------------------------导航栏：关键词--------------------------------------------- */
+.nav-keywords{
+  height: 80px;
+  width: 1000px;
+  margin: 0 auto;
+  /* background-color: green; */
+  position: relative;
+  border: solid 2px black;
+  margin-top: 2px;
+}
+
+.hot-recommendation{
+  height: 30px;
+  width: 60px;
+  /* background-color: red; */
+  border: 1px solid black;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+.hot-keywords{
+  height: 30px;
+  width: 120px;
+  /* background-color: red; */
+  border: 1px solid black;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+/* ---------------------文章显示区域--------------------------- */
+/* 文章外围框架 */
+.essay{
+  height: 600px;
+  width: 1000px;
+  margin: 0 auto;
+  /* background-color: green; */
+  position: relative;
+  border: solid 2px black;
+  margin-top: 2px;
+}
+/* 文章一外围框 */
+.essay-body1{
+  width: 500px;
+  height: 100px;
+  border: 2px solid black;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.title1{
+  width: 300px;
+  height: 30px;
+  border: 1px black solid;
+  margin-top: 15px;
+  margin-left: -1px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.download{
+  width: 50px;
+  height: 30px;
+  float: left;
+  border: 1px solid black;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: -1px;
+}
+
+.online-read{
+  width: 70px;
+  height: 30px;
+  float: left;
+  border: 1px solid black;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: -1px;
+}
+
+.collect{
+  width: 50px;
+  height: 30px;
+  float: left;
+  border: 1px solid black;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: -1px;
+}
